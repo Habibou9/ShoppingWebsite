@@ -1,0 +1,33 @@
+var item1 = {itemCode: "shoe1",name:"Caligae", category: "Sandals", description: "An ancient shoe", rate: 4, url: "URL"}
+var item2 = {itemCode:"shoe2", name:"Geta",category:"Sandals",description: "An ancient shoe",rate: 4,url: "URL"};
+var item3 = {itemCode:"shoe3", name:"Flip-Flops", category: "Sandals", description:"A modern shoe",rate: 5, url:"URL"};
+var item4 = {itemCode:"shoe4", name:"Biblical sandals", category: "Sandals", description:"An ancient shoe",rate: 3,url: "URL"};
+
+var item5 = {itemCode:"shoe5", name:"Oxfords", category: "Dress shoes",description: "A modern Dress shoe",rate: 4, url:"URL"};
+var item6 = {itemCode:"shoe6", name:"Monk Shoes",category: "Dress shoes",description: "A modern Dress shoe",rate: 5,url: "URL"};
+var item7 = {itemCode:"shoe7", name:"Derbies", category: "Dress shoes",description: "A cute shoes",rate:3 ,url: "URL"};
+var item8 = {itemCode:"shoe8", name:"Loafers", category: "Dress shoes",description: "A confortable shoes",rate: 4,url: "URL"};
+
+
+
+var item9 = {itemCode:"shoe9", name:"High-tops", category: "Sneakers",description: "",rate:4 ,url: "URL"};
+var item10 = {itemCode:"shoe10", name:"Low-tops", category: "Sneakers",description: "",rate:3 ,url: "URL"};
+var item11 = {itemCode:"shoe11", name:"Mid-cut", category: "Sneakers",description: "",rate:4 ,url: "URL"};
+var item12 = {itemCode:"shoe12", name:"Slips-on", category: "Sneakers",description: "",rate:5 ,url: "URL"};
+
+var category1 = {name: 'Sandals', items:[item1, item2, item3,item4]};
+var category2 = {name: 'Dress',   items:[item5, item6,item7,item8]};
+var category3 = {name: 'Dress',   items:[item9, item10,item11,item12]};
+
+
+  var util = require('util');
+  var items = function(elements){
+    this.elements = elements;
+  };
+
+  var Items = [category1,category2,category3];
+
+
+module.exports.getItems = function(){
+  return Items;
+}

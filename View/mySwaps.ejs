@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> MySwap</title>
+    <link rel="stylesheet" type="text/css" href="/ressources/index.css">
+  </head>
+
+  <body>
+    <% include partials/header.ejs %>
+
+    <% include partials/user-navigation.ejs %>
+
+    <% include partials/site-navigation.ejs %>
+
+      <main>
+
+        <div id="container">
+          <h1><%= data.user1.firstName %> Swap Offers</h1>
+          <% console.log('swaps - ' + data.userItems[1].item.name) %>
+
+            <table>
+
+              <tr>
+                <th>Shoe</th>
+                <th>Swap Offer</th>
+                <th></th>
+              </tr>
+            <%  for(var i=0; i<data.userItems.length; i++)  { %>
+              <% if(data.userItems[i].Status == 'Available') { %>
+              <tr>
+                <td><%=data.userItems[i].item.name%></td>
+                <td><%=data.userItems[i].item.category%></td>
+                <td> <input type="button" value="accept" onclick="window.location.href='/profile?accept=accept&itemCode=<%= data.userItems[i].item.itemCode%>'"/> <input type="button" value="reject" onclick="window.location.href='/profile?action=reject&itemCode=<%= data.userItems[i].item.itemCode%>'" /></td>
+              </tr>
+                  <% } %>
+              <% } %>
+
+
+            </table><br>
+        </div>
+
+      </main>
+
+      <% include partials/footer.ejs %>
+
+
+  </body>
+
+</html>

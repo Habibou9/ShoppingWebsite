@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> MyItems </title>
+    <link rel="stylesheet" type="text/css" href="/ressources/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <% include partials/header.ejs %>
+
+    <% include partials/user-navigation.ejs %>
+
+    <% include partials/site-navigation.ejs %>
+
+      <main>
+
+        <div id="container">
+
+            <h1> <%= theUser.user1.firstName %>  Shoes</h1>
+            <table>
+
+              <tr>
+                <th>Shoe</th>
+                <th>Category</th>
+                <th>My Rating</th>
+                <th>Swapped</th>
+                <th></th>
+                <th></th>
+              </tr>
+
+                <% for(var j=0;j<theUser.userItems.length;j++){%>
+
+
+              <tr>
+                <td><%= theUser.userItems[j].item.name %> </td>
+                <td><%= theUser.userItems[j].item.category %></td>
+                <td><span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </td>
+                <td><p><%=theUser.userItems[j].Status%></p></td>
+                <td>  <input type="button" value="update" onclick="window.location.href='/profile?action=update&itemCode=<%= theUser.userItems[j].item.itemCode%>'" /></td>
+                <td>  <input id="rate"   type="button" value="Delete" onclick="window.location.href='/myItems'" /></td>
+              </tr>
+              <%  } %>
+
+
+
+            </table><br>
+
+            <div id="legend">
+             <p id="leg"> Legend: <img src="/ressources/swap.png" alt="check" width="25" id="sw2"> swapp offer available <img src="/ressources/check.png" alt="check" width="25" id="ch2"> already swapped </p>
+           </div>
+
+
+        </div>
+
+      </main>
+
+      <% include partials/footer.ejs %>
+
+
+  </body>
+
+</html>

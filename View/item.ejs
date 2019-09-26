@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Item </title>
+    <link rel="stylesheet" type="text/css" href="/ressources/index.css">
+  </head>
+
+  <body>
+    <% include partials/header.ejs %>
+
+    <% include partials/user-navigation.ejs %>
+
+    <% include partials/site-navigation.ejs %>
+
+      <main>
+
+        <section>
+          <p> <a href="/index">home</a> > <a href="/categories">categories</a> > <a href="/item">Item</a><p><br>
+            <%console.log('here iten=m '+''+data.name)%>
+
+            <img id="cal" src="<%= data.url %>" alt="caligae" width="200" >
+
+
+
+
+            <h1><%= data.category %></h1>
+            <p> <%= data.name%></p>
+            <p> <%= data.description1%></p>
+
+
+            <input type="button" value="Swap it" onclick="window.location.href='/swap?itemCode=<%= data.itemCode%>'" /><br>
+            <input id="rate" type="button" value="Rate it" onclick="window.location.href='/login'" /><br>
+            <input id="back" type="button" value="Back" onclick="window.location.href='/categories'" /><br>
+
+
+            <div id="detail">
+            <p > <%= data.description2 %></p><br>
+                </div>
+
+
+          </section>
+
+
+      </main>
+
+      <% include partials/footer.ejs %>
+  </body>
+
+</html>

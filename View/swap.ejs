@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Swap </title>
+    <link rel="stylesheet" type="text/css" href="/ressources/index.css">
+  </head>
+
+  <body>
+   <% include partials/header.ejs %>
+
+    <% include partials/user-navigation.ejs %>
+
+    <% include partials/site-navigation.ejs %>
+
+      <main>
+
+        <section>
+          <p> <a href="/index">home</a> > <a href="/categories">categories</a> > <a href="/item">Item</a> > <a href="/swap">Swap</a><p><br>
+
+            <img id="cal" src="<%= data.url %>" alt="caligae" width="200" >
+
+            <h1><%= data.category %></h1>
+            <p> <%= data.description1 %> </p>
+
+            <input type="button" value="Swap it" onclick="window.location.href='/login'" /><br>
+            <input id="rate" type="button" value="Rate it" onclick="window.location.href='/login'" /><br>
+            <input id="back" type="button" value="Back" onclick="window.location.href='/item?itemCode=<%= data.itemCode%>'" /><br>
+            <input id="back1" type="button" value="Confirm Swap" onclick="window.location.href='/myItems'" /><br>
+
+            <div id="detail">
+              <h5> Select an item from your available swaps</h5>
+
+                <ul id="list">
+                  <li> <a> Caligae Sandals </a> </li>
+                  <li> <a> Sneakers High-Tops </a> </li>
+                </ul>
+            </div>
+
+          </section>
+
+
+
+
+      </main>
+
+      <% include partials/footer.ejs %>
+
+
+  </body>
+
+</html>

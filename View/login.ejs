@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title> Login</title>
+    <link rel="stylesheet" type="text/css" href="/ressources/index.css">
+  </head>
+
+<body>
+  <% include partials/header.ejs %>
+
+  <% include partials/user-navigation.ejs %>
+
+  <% include partials/site-navigation.ejs %>
+
+    <h1> This is the Signing page </h1>
+
+    <p> Welcome </p>
+
+    <div id="container2">
+        <form action="/loginInfo" method="POST">
+          <div id="fm">
+            <% if(locals.data) { %>
+              <%=data%>
+            <%}%>
+            <table >
+              <tr>
+                  <td> <label>Email:</label> </td>
+                  <td> <input type="email" name="Email" size="40" /> </td>
+              </tr>
+              <tr>
+                  <td> <label>Password:</label> </td>
+                  <td> <input type="password" name="Password" size="40" /></td>
+              </tr>
+            </table>
+
+            <input type="submit" value="Sign In"/>
+            
+          </div>
+        </form>
+      </div>
+
+    <% include partials/footer.ejs %>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+
+
+    <nav>
+      <ul>
+        <li><a href="/login"> <% if(locals.signedInUser) { %>
+                              Sign out
+                              <% }else  { %>
+                                Sign In
+                            <%  } %>
+                              </a></li>
+        <li><a href="/profile">My Shoes</a></li>
+        <li><a href="/profile?action=showSwaps">My Swaps</a></li>
+        <li><a href="/cart">Cart</a></li>
+      </ul>
+    </nav>

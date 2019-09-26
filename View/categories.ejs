@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Categories </title>
+    <link rel="stylesheet" type="text/css" href="/ressources/index.css">
+  </head>
+
+  <body>
+
+    <% include partials/header.ejs %>
+
+    <% include partials/user-navigation.ejs %>
+
+    <% include partials/site-navigation.ejs %>
+
+      <main>
+        <%console.log('here '+''+data)%>
+        <section>
+          <p> <a href="/index">home</a> > <a href="/categories">categories</a> <p><br>
+            <ul id="sand">
+            <% for(var i=0; i<data.length; i++){ %>
+              <h1> <%= data[i].name %> </h1>
+              <% for(var j=0;j<data[i].items.length;j++){%>
+                  <li><a href="/item?itemCode=<%= data[i].items[j].itemCode%>"><%= data[i].items[j].name %></a></li>
+              <%  } %>
+
+          <%  } %>
+            </ul>
+
+        </section>
+
+      </main>
+
+      <% include partials/footer.ejs %>
+
+
+  </body>
+
+</html>
